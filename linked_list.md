@@ -1,4 +1,4 @@
-'''
+```java
 public class Lista {
     
     class Nodo {
@@ -12,4 +12,4 @@ public class Lista {
         }
 
     }
-'''
+```
