@@ -186,7 +186,7 @@ public boolean isOrdered () {
     
     // una lista vuota o con un solo elemento è ordinata
     
-    while (ordinato && temp.next.next!=null) {
+    while (ordinato && temp.next!=null) {
         if (temp.data>temp.next.data) {
             ordinato = false;
         } else {
@@ -200,7 +200,7 @@ public boolean isOrdered () {
 ## Stampa
 Azione: stampa la lista
 
-Precondizione: la listan non è vuota
+Precondizione: la lista non è vuota
 ```java
 public void stampa(){
     Nodo temp = testa;
