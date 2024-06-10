@@ -13,6 +13,7 @@ public class Lista {
             next=null;
         }
     }
+    Nodo testa;
 ...
 }
 ```
