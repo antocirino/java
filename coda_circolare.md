@@ -13,6 +13,7 @@ public CodaCircolare(int dim) {
 }
 ```
 ## Append
+Precondizione: coda non piena
 ```java
 public void append(int e){
    C[coda]=e;
@@ -21,6 +22,7 @@ public void append(int e){
 }
 ```
 ## Pop
+Precondizione: coda non vuota
 ```java
 public int pop(){
   int e = C[testa];
@@ -41,6 +43,7 @@ public boolean isFull(){
 }
 ```
 ## Print
+Precondizione: coda non vuota
 ```java
 public void printCoda() {
    for(int i=0; i<nelem; i++) {
