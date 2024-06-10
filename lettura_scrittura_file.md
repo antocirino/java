@@ -1,6 +1,13 @@
 ## Lettura
 Per la lettura da file utilizziamo lo scanner:
 ```java
+String nomeFile;
+try {
+    Scanner input = new Scanner(Paths.get(nomeFile));
+    String nome = scanner.next();
+} catch (NoSuchFileException e) {
+    System.out.println("File non esistente: " + e.getMessage());
+}
 ```
 
 ## Scrittura
