@@ -6,25 +6,30 @@ Per la lettura da file utilizziamo lo scanner:
 ## Scrittura
 Per la scrittura utilizziamo la redirezione dello stream
 ```java
-// Nome del file su cui scrivere l'output
-String nomeFile = "output.txt";
+// Definiamo il nome del file
+String fileName = "output.txt";
 
-// Crea un nuovo PrintStream che scrive su un file
-PrintStream fileOutput = new PrintStream(new FileOutputStream(nomeFile));
-
-// Utilizza Scanner per leggere input dall'utente
-Scanner scanner = new Scanner(System.in);
-System.out.println("Inserisci delle righe di testo (digita 'fine' per terminare):");
-
-// Redirigi System.out sul nuovo PrintStream
-System.setOut(fileOutput);
-// Leggi input dall'utente e scrivi su System.out (ovvero sul file)
-String linea;
-while (!(linea = scanner.nextLine()).equalsIgnoreCase("fine")) {
-    System.out.println(linea); // Stampa su file tramite System.out
+try {
+    // Creiamo un nuovo PrintStream per il file
+    PrintStream fileStream = new PrintStream(new FileOutputStream(fileName));
+    
+    // Salviamo l'attuale System.out in modo da poterlo ripristinare successivamente
+    PrintStream consoleStream = System.out;
+    
+    // Reindirizziamo l'output di System.out su fileStream
+    System.setOut(fileStream);
+    
+    // Ora tutto ciò che viene stampato su System.out verrà scritto direttamente sul file
+    
+    // Esempio di scrittura
+    System.out.println("Questo è un esempio di scrittura su file utilizzando System.out.");
+    
+    // Ripristiniamo l'output di System.out sulla console
+    System.setOut(consoleStream);
+    
+    System.out.println("Scrittura completata con successo!");
+} catch (IOException e) {
+    // Gestione delle eccezioni in caso di errori di I/O
+    System.out.println("Si è verificato un errore durante la scrittura nel file: " + e.getMessage());
 }
-
-// Chiudi lo scanner e il PrintStream
-scanner.close();
-fileOutput.close();
 ```
