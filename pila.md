@@ -14,6 +14,7 @@ public Pila(int dim){
 }
 ```
 ## Push
+Precondizione: pila non piena
 ```java
 public void push(int e){
    P[testa]=e;
@@ -21,6 +22,7 @@ public void push(int e){
 }
 ```
 ## Pop
+Precondizione: pila non vuota
 ```java
 public int pop(){
    testa--;
