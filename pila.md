@@ -36,15 +36,15 @@ public int top(){
    return P[testa-1];
 }
 ```
-```java
-public boolean isEmpty(){
-   return testa==0;
-}
-```
 ## Predicato
 ```java
 public boolean isFull(){
    return testa==max;
+}
+```
+```java
+public boolean isEmpty(){
+   return testa==0;
 }
 ```
 ## Print
