@@ -37,7 +37,7 @@ public boolean full() {
 ## Push
 Azione: inserimento in testa
 
-Precondizione: la lista non è piena nè ordinata
+Precondizione: la lista non è piena
 ```java
 private void push(int e) {
     Nodo q = new Nodo(e);
